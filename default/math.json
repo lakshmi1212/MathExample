@@ -34,19 +34,22 @@
   },
   "jobs": [
     {
-      "job_id": "ci-test",
+      "job_id": "ci",
       "job_name": "Run Python Tests",
       "runs_on": "ubuntu-latest",
       "steps": [
         {
           "step_name": "Checkout code",
           "action_type": "uses",
-          "action": "actions/checkout@v4"
+          "action": "actions/checkout@v3"
         },
         {
           "step_name": "Set up Python",
           "action_type": "uses",
-          "action": "actions/setup-python@v5"
+          "action": "actions/setup-python@v4",
+          "with": {
+            "python-version": "3.10"
+          }
         },
         {
           "step_name": "Install dependencies",

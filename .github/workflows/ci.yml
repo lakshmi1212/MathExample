@@ -1,5 +1,4 @@
-name: CI
-
+name: CI Pipeline
 on:
   push:
     branches:
@@ -7,13 +6,12 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
-  ci_tests:
+  ci-test:
     runs-on: ubuntu-latest
-    name: Run Pytest Suite
+    name: Run Python Tests
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5

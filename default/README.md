@@ -1,38 +1,27 @@
 # MathExample
 
-A simple Python project implementing basic math operations (addition and subtraction) with automated tests and CI workflow integration.
+This repository contains basic math operations (addition and subtraction) implemented in Python, with comprehensive pytest test coverage and CI/CD workflow integration.
 
-## Project Structure
-
-- `src/math_operations.py` - Core math functions (add, subtract)
-- `tests/test_add.py` - Pytest cases for addition
-- `tests/test_subtract.py` - Pytest cases for subtraction
-- `default/requirements.txt` - Python dependencies
-- `default/README.md` - This documentation
-- `default/math.json` - CI workflow metadata for automation
+## Structure
+- `src/math_operations.py`: Core math logic
+- `tests/test_add.py`: Tests for addition
+- `tests/test_subtract.py`: Tests for subtraction
+- `default/requirements.txt`: Project dependencies
+- `default/math.json`: CI workflow metadata
 
 ## Usage
 
-1. **Install dependencies**
+1. **Install dependencies:**
+   ```bash
+   pip install -r default/requirements.txt
+   ```
+2. **Run tests:**
+   ```bash
+   python -m pytest tests/ -v --tb=short
+   ```
 
-```bash
-pip install -r default/requirements.txt
-```
-
-2. **Run tests**
-
-```bash
-pytest tests/ -v --tb=short
-```
-
-## CI/CD Integration
-
-The repository is designed for seamless CI integration. Workflow metadata is provided in `default/math.json` for use by automation agents to generate workflow YAML files.
+## CI/CD
+- See `.github/workflows/ci.yml` for the workflow (referenced via `math.json`).
 
 ## Python Version
-
-Python >= 3.10 is required.
-
-## License
-
-MIT
+- Requires Python 3.10 or compatible.
